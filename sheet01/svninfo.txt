@@ -1,0 +1,11 @@
+Pfad: .
+URL: https://daphne.informatik.uni-freiburg.de/svn/infoI1415/mk488
+Basis des Projektarchivs: https://daphne.informatik.uni-freiburg.de/svn/infoI1415
+UUID des Projektarchivs: 7811ba38-64a7-44f8-b2e3-66f10587e108
+Revision: 37
+Knotentyp: Verzeichnis
+Plan: normal
+Letzter Autor: daphne
+Letzte geänderte Rev: 37
+Letztes Änderungsdatum: 2014-10-24 10:23:29 +0200 (Fr, 24. Okt 2014)
+

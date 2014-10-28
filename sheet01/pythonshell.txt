@@ -1,0 +1,20 @@
+a)
+
+>>> print(" H","e","l","l","o W","o","r","l","d !",sep='=',end='\n-----------------------\n');
+ H=e=l=l=o W=o=r=l=d !
+-----------------------
+>>>
+
+b)
+>>> side = 70;
+>>> height = 50;
+>>> sidearea = (0.5*side)*height;
+>>> print("Fläche einer Seite:", sidearea, " m²");
+Fläche einer Seite: 1750.0  m²
+>>> lateralsurface = 4*sidearea;
+>>> print("Mantelfläche der Pyramide:", lateralsurface, " m²");
+Mantelfläche der Pyramide: 7000.0  m²
+>>> fullsurface = lateralsurface + side**2;
+>>> print("Oberfläche der Pyramide:", fullsurface, " m²");
+Oberfläche der Pyramide: 11900.0  m²
+>>>

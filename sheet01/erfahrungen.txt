@@ -1,0 +1,6 @@
+taufwand für die Übungen war gering, Probleme hatte ich nur weil ich einmal
+versehentlich die falsche Python Version verwendet habe. Ebenfals stört es mich
+das es mir nicht möglich ist in meinem Python Interpreter meine Pfeiltaste nach
+oben zu benutzen um meine letzte Eingabe erneut zu nutzen, oder die Pfeiltaste
+nach links um einen Befehl weiter vorne nochmal zu bearbeiten. In Python 2.7
+ging das noch, in 3.4 nichtmehr. Zumindest bei mir.

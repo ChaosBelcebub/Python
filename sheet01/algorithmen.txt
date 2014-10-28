@@ -1,0 +1,12 @@
+a) Es handelt sich dabei um keinen Algorithmus. Jeder schritt ist präzise, und
+jeder schritt ist ausführbar. Bei der Vorschrift handelt es sich um einen
+endlichen Text und für die Ausführung reicht ein endlicher Speicher. Es gibt
+eine Abbruchbedingungen, wenn k den wert p hat. Dies trifft zu wenn n = 5.
+Damit wäre im zweiten Schritt p=7 und k=7. Für n = 4 trifft das nicht zu, es
+gibt also fälle ohne Terminierung.
+
+b) Der Text ist nicht ausagekräftig genug. Was wenn man am Ende des Alphabets
+ist? Die Vorschrift ist auch kein endlicher Text, die Punkte zeigen das es noch
+weiter geht, das Ende ist nicht abzusehen. Die Ausführung benötigt endlichen
+Speicher. Eine Terminierung ist nicht vorhanden. In diesem Fall kein
+Algorithmus.

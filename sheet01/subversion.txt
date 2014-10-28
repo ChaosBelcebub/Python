@@ -1,0 +1,20 @@
+a) Ein SVN Repository ist verwaltetes Verzeichnis zur Speicherung und Beschreibung von
+digitalen Objekten.
+
+b) Die Arbeitskopie ist mein eigenes Arbeitsfeld mit eigener Ordnerstruktur.
+Hier arbeite ich mit meinen Dateien und gebe diese nur frei wenn ich das möchte.
+
+c) Eine Revision ist ein Zustand des Dateisystem. Bei jedem Commit wird eine
+neue Revision erstellt.
+
+d) Checkout checkt meine Arbeitskopie aus dem Projektarchiv aus. Dies muss
+einmalig erledigt werden. Weitere Änderungen aus dem Projektarchiv hole ich mit
+svn update in meine Arbeitskopie.
+
+e) Zuerst murr ich die frühere Version in meine Arbeitskopie bringen:
+    svn merge -r [aktuelle version]:[vorherige version][URL]
+      oder:
+    svn merge -c -REV
+      für einzelne Änderungen.
+   Danach muss ich meine Arbeitskopie nur commiten und mein Repository ist
+   wieder auf dem alten Stand.
