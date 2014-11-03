@@ -1,0 +1,12 @@
+a) type(res) = int
+Zuerst wird der log2 von 128 genommen. Dies ist dann eine Float. Und das durch
+die umklammerung mit int() in ein integer umgewandelt. Die Multiplizierung mit
+6 Ändert am Typ nichts mehr.
+
+b) ceil() und floor() geben jeweils Integer zurück, sqrt() dagegen eine float,
+deswegene wird das ergebnis als float gespeichert.
+
+c) Alle Funktionen geben Float zurück, also ist das Ergebnis auch eine Float
+
+d) In diesem Fall ist res ein Boolscher Ausdruck, was man an dem Vergleich mit
+== erkennt.
