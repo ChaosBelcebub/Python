@@ -1,0 +1,19 @@
+# (1)
+Sichtbar sind s und a.
+s = "spamspamspam"
+a = "spamspamspam"
+
+#(2)
+Sichtbar sind s, a, f, x
+s = "ham"
+a = "ham"
+f zeigt auf foo
+x = 126
+
+#(3)
+Sichtbar sind s, a, f, x, i
+s = "hamhamhamhamhamhamhamham"
+a = "ham"
+f zeigt auf foo
+x = 126
+i = 3
