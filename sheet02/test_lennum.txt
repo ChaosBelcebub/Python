@@ -1,0 +1,8 @@
+>>> binlen(-1) is None
+True
+>>> binlen(42) == 6
+True
+>>> binlen("Hallo") is None
+True
+>>> binlen(0b101010) == 6
+True
