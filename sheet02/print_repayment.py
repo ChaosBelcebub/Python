@@ -22,9 +22,9 @@ def print_repayment(amount, interest, rate):
         """ Berechnet den Anteil der Tilgung """
         tilgung = interest - p_rate
         """ Normalerweise ist die Tilgung kleiner als die Restschuld """
+        """ Fals das nicht der Fall ist muss anderst vorgegangen werden """
         if tilgung < amount:
             new_amount = amount - tilgung
-        """ Fals das nicht der Fall ist muss anderst vorgegangen werden """
         else:
             tilgung = amount
             interest = amount + p_rate
@@ -32,7 +32,8 @@ def print_repayment(amount, interest, rate):
         """ Zählt die Monate """
         month += 1
         """ Druckt das Ergebnis """
-        print("%6.0f" %month, "%11.2f" %amount, "%13.2f" %interest, "%7.2f" %p_rate, "%8.2f" %tilgung, "%11.2f" %new_amount)
+        print("%6.0f" %month, "%11.2f" %amount, "%13.2f" %interest,\
+              "%7.2f" %p_rate, "%8.2f" %tilgung, "%11.2f" %new_amount)
         amount = new_amount
     print("-" * 62)
     if month >= 72:
