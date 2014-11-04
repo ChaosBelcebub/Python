@@ -14,7 +14,8 @@ def repayment(amount, interest, rate):
             interest = amount + p_rate
             new_amount = amount - tilgung
         month += 1
-        print(month, round(amount, 2), round(interest, 2), round(p_rate, 2), round(tilgung, 2), round(new_amount, 2))
+        print(month, round(amount, 2), round(interest, 2), round(p_rate, 2),\
+            round(tilgung, 2), round(new_amount, 2))
         amount = new_amount
     print("-" * 62)
     if month >= 72:
