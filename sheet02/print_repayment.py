@@ -32,7 +32,7 @@ def print_repayment(amount, interest, rate):
         """ Zählt die Monate """
         month += 1
         """ Druckt das Ergebnis """
-        print("%6.0f" %month, "%11.2f" %amount, "%13.2f" %interest,\
+        print("%6.0f" %month, "%11.2f" %amount, "%13.2f" %interest,
               "%7.2f" %p_rate, "%8.2f" %tilgung, "%11.2f" %new_amount)
         amount = new_amount
     print("-" * 62)
