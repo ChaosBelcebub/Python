@@ -11,29 +11,43 @@ def readterm(term, dest):
     leftstack = []
     rightstack = []
     for c in term:
-        if c == '(' and count == 0:
-            ignore = True
-            count += 1
-        elif c == ')' and count != 0 and toggle == False:
-            count -= 1
-            leftstack.append(c)
-        elif c == ')' and count != 0 and toggle == True:
-            count -= 1
-            rightstack.append(c)
-        elif c == ')' and count == 0:
+        if count == 0:
             ignore = False
-        elif ignore == True and toggle == False:
-            leftstack.append(c)
-        elif ignore == True and toggle == True:
-            rightstack.append(c)
-        elif c != '+' and toggle == False:
-            leftstack.append(c)
-        elif c != '+' and toggle == True:
-            rightstack.append(c)
-        elif c == '+' and ignore == False:
-            toggle = True
-            destination[0] = c
-
+        if toggle == False:
+            if c == '(' and count == 0:
+                ignore = True
+                count += 1
+                continue
+            elif c == '(' and count != 0:
+                count += 1
+            if ignore == False:
+                if c != '+':
+                    if c == ')' and count == 0:
+                        continue;
+                    leftstack.append(c)
+                if c == '+':
+                    toggle = True
+                    destination[0] = c
+            else:
+                if c == ')':
+                    count -= 1
+                leftstack.append(c)
+        else:
+            if c == '(' and count == 0:
+                ignore = True
+                count += 1
+                continue
+            elif c == '(' and count != 0:
+                count += 1
+            if ignore == False:
+                if c != '+':
+                    if c == ')' and count == 0:
+                        continue;
+                    rightstack.append(c)
+            else:
+                if c == ')':
+                    count -= 1
+                rightstack.append(c)
     if len(leftstack) == 1:
         destination[1] = [str(leftstack[0]), None, None]
         leftstack = []
@@ -63,4 +77,3 @@ def print_tre(tree):
         print_tre(tree[1])
     if tree[2] != None:
         print_tre(tree[2])
-    
