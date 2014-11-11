@@ -5,14 +5,18 @@ def read(term):
     
 def readterm(term, dest):
     destination = dest
+    count = 0
     toggle = False
     ignore = False
     leftstack = []
     rightstack = []
     for c in term:
-        if c == '(':
+        if c == '(' and count == 0:
             ignore = True
-        elif c == ')':
+            count += 1
+        elif c == ')' and count != 0:
+            count -= 1
+        elif c == ')' and count == 0:
             ignore = False
         elif ignore == True and toggle == False:
             leftstack.append(c)
