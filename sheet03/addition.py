@@ -2,69 +2,38 @@ def read(term):
     output = [None, None, None]
     readterm(term, output)
     return output
-    
-def readterm(term, dest):
-    destination = dest
+
+def readterm(term, destination):
     count = 0
-    toggle = False
-    ignore = False
-    leftstack = []
-    rightstack = []
+    left = []
+    right = []
     for c in term:
-        if count == 0:
-            ignore = False
-        if toggle == False:
-            if c == '(' and count == 0:
-                ignore = True
-                count += 1
-                continue
-            elif c == '(' and count != 0:
-                count += 1
-            if ignore == False:
-                if c != '+':
-                    if c == ')' and count == 0:
-                        continue;
-                    leftstack.append(c)
-                if c == '+':
-                    toggle = True
-                    destination[0] = c
-            else:
-                if c == ')':
-                    count -= 1
-                leftstack.append(c)
+        if c == '(':
+            count += 1
+        elif c == ')':
+            count -= 1
+        if c == '+' and count == 0:
+            destination[0] = c
+        elif destination[0] != '+':
+            left.append(c)
         else:
-            if c == '(' and count == 0:
-                ignore = True
-                count += 1
-                continue
-            elif c == '(' and count != 0:
-                count += 1
-            if ignore == False:
-                if c != '+':
-                    if c == ')' and count == 0:
-                        continue;
-                    rightstack.append(c)
-            else:
-                if c == ')':
-                    count -= 1
-                rightstack.append(c)
-    if len(leftstack) == 1:
-        destination[1] = [str(leftstack[0]), None, None]
-        leftstack = []
-    elif len(leftstack) > 1:
-        if destination[0] != None:
+            right.append(c)
+    if destination[0] != '+':
+        left.pop()
+        left.pop(0)
+    if len(left) == 1:
+        destination[1] = [str(left[0]), None, None]
+    elif len(left) > 1:
+        if destination[0] == None:
+            readterm(''.join(left), destination)
+        else:
             destination[1] = [None, None, None]
-            readterm(''.join(leftstack), destination[1])
-        else:
-            readterm(''.join(leftstack), destination)
-        leftstack = []
-    if len(rightstack) == 1:
-        destination[2] = [str(rightstack[0]), None, None]
-        rightstack = []
-    elif len(rightstack) > 1:
+            readterm(''.join(left), destination[1])
+    if len(right) == 1:
+        destination[2] = [str(right[0]), None, None]
+    elif len(right) > 1:
         destination[2] = [None, None, None]
-        readterm(''.join(rightstack), destination[2])
-        rightstack = []
+        readterm(''.join(right), destination[2])
 
 def print_tree(tree):
     print_tre(tree)
