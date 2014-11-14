@@ -1,0 +1,47 @@
+Trying:
+    derif((3, 2, 1), -1)
+Expecting nothing
+ok
+Trying:
+    derif((3, 2, 1), 2)
+Expecting:
+    (6,)
+ok
+Trying:
+    derif((6, 8, 3, 2), 3)
+Expecting:
+    (36,)
+ok
+Trying:
+    derif((12, 7, 4), 0)
+Expecting:
+    (12, 7, 4)
+ok
+Trying:
+    first_derif((3, 2, 1))
+Expecting:
+    (6, 2)
+ok
+Trying:
+    first_derif((4, 3, 2))
+Expecting:
+    (8, 3)
+ok
+Trying:
+    first_derif((4, 2))
+Expecting:
+    (4,)
+ok
+Trying:
+    first_derif((-2, 5, 2))
+Expecting:
+    (-4, 5)
+ok
+1 items had no tests:
+    polynomial
+2 items passed all tests:
+   4 tests in polynomial.derif
+   4 tests in polynomial.first_derif
+8 tests in 3 items.
+8 passed and 0 failed.
+Test passed.
