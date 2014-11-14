@@ -19,8 +19,12 @@ def readterm(term, destination):
         else:
             right.append(c)
     if destination[0] != '+':
-        left.pop()
-        left.pop(0)
+        if len(left) != 1:
+            left.pop()
+            left.pop(0)
+        else:
+            destination[0] = left[0]
+            return
     if len(left) == 1:
         destination[1] = [str(left[0]), None, None]
     elif len(left) > 1:
