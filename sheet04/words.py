@@ -3,6 +3,8 @@
 .. moduleauthor:: Michael Kotzjan <mich3ael@web.de>
 '''
 
+from words_data import *
+
 LETTERS = "abcdefghijklmnopqrstuvwxyz"+\
 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+\
 "ÄÖÜäöüß"
@@ -61,41 +63,11 @@ def next_word(s):
     '''
     
     """while s[0] not in LETTERS:"""
-    """Wenn s = "" dann tritt hier ein laufzeitfehler auf"""
-    if len(s) == 0:
-        return (None, "")
-    while s[0] not in LETTERS:
+    """Wenn s = "" oder nur unlesbare Zeichen enthalten sind
+    dann tritt hier ein laufzeitfehler auf"""
+    while s!= "" and s[0] not in LETTERS:
         s=s[1:]
     return _next_word_helper(s)
-
-def lexi_sort(word, w):
-    '''Test two words for lexikographic sorting
-
-    Args:
-      word (string): a string
-        Holds the word of the tree
-      w (string): a string
-        Holds the word which should be tested
-
-    Returns:
-      integer: if w should be sorted left, else 2
-
-    Examples:
-
-      >>> lexi_sort("a", "b")
-      2
-      >>> lexi_sort("Hallo", "Welt")
-      2
-      >>> lexi_sort("Welt", "Hallo")
-      1
-      >>> lexi_sort("aaab", "aaaa")
-      1
-    '''
-    
-    if w < word:
-        return 1
-    else:
-        return 2
 
 def to_tuple(l):
     '''Change a list and all its sub lists into tuples
@@ -148,11 +120,13 @@ def word_tree(s):
     while rest != "":
         tree = wordtree
         word, rest = next_word(rest)
+        if word == None:
+            continue
         while True:
             if tree[0] == word:
                 tree[3] += 1
                 break
-            elif lexi_sort(word, tree[0]) == 2:
+            elif word < tree[0]:
                 if tree[1] is None:
                     tree[1] = [word, None, None, 1]
                     break
@@ -198,3 +172,14 @@ def freq_word_tree(tree, word):
     else:
         return freq_word_tree(tree[2], word)
 
+def test_word_tree():
+    assert word_tree('a') == ('a', None, None, 1)
+    assert word_tree('') == (None, None, None, 1)
+    assert word_tree('b a c') == ('b', ('a', None, None, 1), ('c', None, None, 1), 1)
+    assert word_tree("g h j a b g g i i b") == ('g', ('a', None, ('b', None, None, 2), 1), ('h', None, ('j', ('i', None, None, 2), None, 1), 1), 3)
+
+def test_freq_word_tree():
+    assert freq_word_tree(word_tree(loremipsum), 'dolor') == 2
+    assert freq_word_tree(word_tree(loremipsum_long), 'labore') == 165
+    assert freq_word_tree(word_tree(illustration), 'Paris') == 25
+    assert freq_word_tree(word_tree(illustration), 'la') == 414
