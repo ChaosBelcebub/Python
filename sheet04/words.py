@@ -175,8 +175,11 @@ def freq_word_tree(tree, word):
 def test_word_tree():
     assert word_tree('a') == ('a', None, None, 1)
     assert word_tree('') == (None, None, None, 1)
-    assert word_tree('b a c') == ('b', ('a', None, None, 1), ('c', None, None, 1), 1)
-    assert word_tree("g h j a b g g i i b") == ('g', ('a', None, ('b', None, None, 2), 1), ('h', None, ('j', ('i', None, None, 2), None, 1), 1), 3)
+    assert word_tree('b a c') == ('b', ('a', None, None, 1), \
+                                  ('c', None, None, 1), 1)
+    assert word_tree("g h j a b g g i i b") == \
+           ('g', ('a', None, ('b', None, None, 2), 1), \
+            ('h', None, ('j', ('i', None, None, 2), None, 1), 1), 3)
 
 def test_freq_word_tree():
     assert freq_word_tree(word_tree(loremipsum), 'dolor') == 2
