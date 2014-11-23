@@ -18,7 +18,10 @@ def perm_helper(s, k):
                 t = s.copy()
                 t.remove(e)
                 for perm in perm_helper(t, k-1):
-                    out.append(tuple(e) + tuple(perm))
+                    if isinstance(perm, str):
+                        out.append(tuple([e]) + tuple([perm]))
+                    else:
+                        out.append(tuple([e]) + tuple(perm))
             else:
                 out.append(e)
     return out
