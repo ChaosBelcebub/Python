@@ -11,7 +11,7 @@ References:
 actors = [[("salutation", "Mr."), ("givenName", "Peter"),
            ("familyName", "Dinklage"), ("birthday", "06/11/1969"),
            ("GoT", "Lannister", "Tyrion")],
-          [("salutation", "Mrs."), ("givenName", "Michelle"), 
+          [("salutation", "Mrs."), ("givenName", "Michelle"),
            ("familyName", "Fairley"), ("birthday", "01/17/1964"),
            ("GoT", "Stark", "Catelyn")],
           [("salutation", "Mr."), ("givenName", "Nicolaj"),
@@ -24,11 +24,31 @@ actors = [[("salutation", "Mr."), ("givenName", "Peter"),
            ("familyName", "Clarke"), ("birthday", "05/01/1987"),
            ("GoT", "Targaryen", "Daenerys")]]
 
+# Your functions follow here
+# ...
 
 
-## Your functions follow here
-## ...
+def actors_to_string(actors):
+    out = ""
+    for lst in actors:
+        for tup in lst:
+            if len(tup) == 2:
+                out += tup[0] + ": " + tup[1] + "\n"
+            else:
+                out += tup[0] + ": " + tup[2] + " " + tup[1] + "\n"
+        out += "\n"
+    return out
 
+
+def actors_to_gotfamilies(actors):
+    out = {}
+    for lst in actors:
+        out[lst[4][1]] = {}
+        out[lst[4][1]][lst[4][2]] = {}
+        for tup in lst:
+            if len(tup) == 2:
+                out[lst[4][1]][lst[4][2]][tup[0]] = tup[1]
+    return out
 
 if __name__ == "__main__":
     # Your tests follow here after you deleted the next line:

@@ -5,8 +5,10 @@ def subsets(s, k):
             result.add(e)
     return result
 
+
 def permutations(s, k):
     return set(perm_helper(s, k))
+
 
 def perm_helper(s, k):
     out = []
