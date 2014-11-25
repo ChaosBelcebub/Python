@@ -43,7 +43,8 @@ def actors_to_string(actors):
 def actors_to_gotfamilies(actors):
     out = {}
     for lst in actors:
-        out[lst[4][1]] = {}
+        if lst[4][1] not in out:
+            out[lst[4][1]] = {}
         out[lst[4][1]][lst[4][2]] = {}
         for tup in lst:
             if len(tup) == 2:
@@ -52,5 +53,20 @@ def actors_to_gotfamilies(actors):
 
 if __name__ == "__main__":
     # Your tests follow here after you deleted the next line:
-    pass
+    got = actors_to_gotfamilies(actors)
+    assert got["Lannister"] == {'Jamie': {'salutation': 'Mr.',
+                                          'birthday': '07/27/1970',
+                                          'givenName': 'Nicolaj',
+                                          'familyName': 'Coster-Waldau'},
+                                'Tyrion': {'salutation': 'Mr.',
+                                           'birthday': '06/11/1969',
+                                           'givenName': 'Peter',
+                                           'familyName': 'Dinklage'}}
+    assert got["Stark"]["Arya"] == {'salutation': 'Ms.',
+                                    'birthday': '04/17/1997',
+                                    'givenName': 'Maisie',
+                                    'familyName': 'Williams'}
+    assert got["Targaryen"]["Daenerys"]["givenName"] == "Emilia"
+    assert got["Lannister"]["Jamie"]["familyName"] == "Coster-Waldau"
     # Your print command for exercise 5.3b follows here:
+    print("There are", len(got["Stark"]), "member of the Stark family.")
