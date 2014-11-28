@@ -1,5 +1,7 @@
 """Actors with dictionary, WS1415
 
+..versionadded:: 2014-11-27
+
 References:
  * Lecture slides at:
    http://www.informatik.uni-freiburg.de/~ki/teaching/ws1415/info1/lecture.html
@@ -29,6 +31,16 @@ actors = [[("salutation", "Mr."), ("givenName", "Peter"),
 
 
 def actors_to_string(actors):
+    '''Function which returns the actors as string
+
+    Args:
+      actors (list):
+        A list, containing lists of tupel with informations about an actor
+
+    Returns:
+      string: the information about all actors as string
+    '''
+
     out = ""
     for lst in actors:
         for tup in lst:
@@ -41,6 +53,16 @@ def actors_to_string(actors):
 
 
 def actors_to_gotfamilies(actors):
+    '''Function which returns the actors order by got families
+
+    Args:
+      actors (list):
+        A list, containing lists of tupel with informations about an actor
+
+    Returns:
+      dictionary: contains all families with information abaout actors
+    '''
+
     out = {}
     for lst in actors:
         if lst[4][1] not in out:

@@ -1,4 +1,21 @@
+'''File for sets
+.. versionadded:: 2014-11-27
+.. moduleauthor:: Michael Kotzjan <mich3ael@web.de>
+'''
+
+
 def subsets(s, k):
+    '''Returns the subsets of s with length k
+
+    Args:
+      s (set):
+        The set
+      k (integer):
+        the length of the wanted subset
+
+    Returns:
+      set: set of the subsets
+    '''
     result = set()
     for e in s:
         if len(e) == k:
@@ -7,11 +24,18 @@ def subsets(s, k):
 
 
 def permutations(s, k):
-    return set(perm_helper(s, k))
+    '''Returns the permutations of s with length k
 
+    Args:
+      s (set):
+        The set
+      k (integer):
+        the length of the wanted subset
 
-def perm_helper(s, k):
-    out = []
+    Returns:
+      set: set of tuples
+    '''
+    out = set()
     if k == 1:
         out = set(s)
     elif k < 1:
@@ -21,13 +45,10 @@ def perm_helper(s, k):
             if k > 1:
                 t = s.copy()
                 t.remove(e)
-                for perm in perm_helper(t, k-1):
-                    if isinstance(perm, str):
-                        out.append(tuple([e]) + tuple([perm]))
-                    else:
-                        out.append(tuple([e]) + tuple(perm))
+                for perm in permutations(t, k-1):
+                    out.add((e,) + (perm,))
             else:
-                out.append(e)
+                out.add(e)
     return out
 
 # Global variable for testing
