@@ -43,9 +43,31 @@ def vigenere(text, secret, charset=ascii_letters):
 
     """
     # your code follows here
-    
-    
+    for char in secret:
+        if char not in charset:
+            return None
+    index = 0
+    index_max = len(secret)
+    encoded = []
+    for char in text:
+        new_char = char
+        if char in charset:
+            new_char = shift_char(char, charset.index(secret[index]), charset)
+        index += 1
+        if index == index_max:
+            index = 0
+        encoded.append(new_char)
+    return ''.join(encoded)
+
+
+def test_vigenere():
+    assert vigenere("1. Advent", "Kerze") == "1. ZhfiES"
+    assert vigenere("1. Advent", "Ker ze") == None
+    assert vigenere("geheimnis", "akey") == "golCiwrGs"
+    assert vigenere("Dies ist ein Test!", "Schokolade") == "vklG wDt iap hoGE!"
+
 
 if __name__ == "__main__":
     encrypted = vigenere("1. Advent", "Kerze")
     print(encrypted)
+    test_vigenere()
