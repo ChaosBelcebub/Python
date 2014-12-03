@@ -64,7 +64,7 @@ def caesar(fname, shift=0, charset=ascii_letters):
     file.close()
     # return a string representation of the resulting list
     return ''.join(encoded)
-    
+
 
 if __name__ == "__main__":
     encrypted = caesar("caesar.txt", 3)
