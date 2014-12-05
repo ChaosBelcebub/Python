@@ -1,3 +1,4 @@
 brainfuck ist echter mist...
 
-Dauer: 4 Stunden
+Dauer: 2.5 Stunden
+2 Davon Brainfuck
