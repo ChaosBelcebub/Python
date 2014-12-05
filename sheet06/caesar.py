@@ -9,6 +9,7 @@ References:
 """
 
 from string import ascii_letters
+import sys
 
 
 def shift_char(char, shift, charset):
@@ -26,7 +27,7 @@ def shift_char(char, shift, charset):
     return charset[index]
 
 
-def caesar(fname, shift=0, charset=ascii_letters):
+def caesar(text, shift=0, charset=ascii_letters):
     """Perfom a caesar shift on the input text and return the result.
 
     Args:
@@ -44,13 +45,6 @@ def caesar(fname, shift=0, charset=ascii_letters):
     'abc'
 
     """
-    try:
-        file = open(fname, mode='r')
-        text = file.read()
-        file.close()
-    except IOError:
-        print("No file '%s' found. Using Demo text." % fname)
-        text = "abcdefghijklmnopqrstuvwxyz"
     # prepare an empty list to be filled with the encrypted text
     encoded = []
     for char in text:
@@ -59,14 +53,29 @@ def caesar(fname, shift=0, charset=ascii_letters):
         if char in charset:
             new_char = shift_char(char, shift, charset)
         encoded.append(new_char)
-    file = open(fname + ".enc", mode='w')
-    file.write(''.join(encoded))
-    file.close()
     # return a string representation of the resulting list
     return ''.join(encoded)
 
 
 if __name__ == "__main__":
-    encrypted = caesar("caesar.txt", 3)
-    decrypted = caesar("caesar.txt.enc", 3)
-    print(encrypted, decrypted, sep='\n')
+    try:
+        assert len(sys.argv) == 3
+        file = open(sys.argv[1], mode='r')
+        text = file.read()
+        file.close()
+        shift = int(sys.argv[2])
+
+        encrypted = caesar(text, shift)
+        decrypted = caesar(encrypted, shift)
+
+        file = open(sys.argv[1] + ".enc", mode='w')
+        file.write(encrypted)
+        file.close()
+    except IOError:
+        print("No file '%s' found." % sys.argv[1])
+    except (IndexError, AssertionError):
+        print("Usage: python caesar.py [file] [shift]")
+    except ValueError:
+        print("Please enter a number for [shift]")
+    except:
+        print("Unexpected Error:", sys.exec_info()[0])
