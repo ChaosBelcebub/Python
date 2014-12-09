@@ -3,6 +3,7 @@ Eine Raute kann durch folgende Parameter sinnvoll beschrieben werden:
 - y: Y-Position der Raute
 - height: Die höhe der Raute
 - width: Die Breite der Raute
+Daraus lassen sich dann die zum Zeichnen benötigten Eckpunkte berechnen.
 
 Die Klasse Rhombus sollte sich von der Klasse Rectangle ableiten, weil diese
 schon über die benötigten Attribute verfügt und es sich bei der Raute um einen
