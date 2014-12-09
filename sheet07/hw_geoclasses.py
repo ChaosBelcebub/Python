@@ -14,6 +14,8 @@ References:
 """
 
 from math import pi
+import tkinter as tk
+import sys
 
 
 class TwoDObject:
@@ -228,14 +230,60 @@ class Square(Rectangle):
 
 
 class Rhombus(Rectangle):
-  """ Axis-aligned rectangles.
+    """ Axis-aligned rhombus.
 
-  An instance of this class represents a rhombus with the following
-  corners: (width/2+x, y), (x, height/2+y), (-(width/2)+x, y),
-  and (x, -(height/2)+y).
+    An instance of this class represents a rhombus with the following
+    corners: (width/2+x, y), (x, height/2+y), (-(width/2)+x, y),
+    and (x, -(height/2)+y).
 
-  Args:
-    x (float, optional):
+    Args:
+      x (float, optional): x-value of the anchor point, defaults to 5.0.
+      y (float, optional): y-value of the anchor point, defaults to 5.0.
+      height (float, optional): height of the rhombus, defaults to 1.0.
+      width (float, optional): width of the rhombus, defaults to 1.0.
+
+    Attributes:
+      x
+      y
+      heigth
+      width
+
+    Examples:
+
+      >>> a = Rhombus(height=2.0, width=4.0)
+      >>> a
+      Rhombus(x=5.0, y=5.0, height=2.0, width=4.0)
+
+    .. versionadded:: 2014-12-09
+    """
+
+    def __init__(self, x=5.0, y=5.0, height=1.0, width=1.0):
+        self.height = height
+        self.width = width
+        super().__init__(x, y, height, width)
+
+    def area(self):
+        """Calculate the area of the rhombus."""
+        return 0.5 * self.width * self.height
+
+    def change_size(self, percent):
+        super().change_size(percent)
+
+    def stretch_height(self, percent):
+        super().stretch_height(percent)
+
+    def stretch_width(self, percent):
+        super().stretch_width(percent)
+
+    def __repr__(self):
+        return ("Rhombus(x=%s, y=%s, height=%s, width=%s)" %
+                (self.x, self.y, self.height, self.width))
+
+    def points(self):
+        return [self.width/2+self.x, self.y, self.x, self.height/2+self.y,\
+                -(self.width/2)+self.x, self.y, self.x, -(self.height/2)+self.y]
+
+
 def _test():
     import doctest
     doctest.testmod(verbose=True)
@@ -243,3 +291,12 @@ def _test():
 
 if __name__ == "__main__":
     _test()
+
+    root = tk.Tk()
+    cv = tk.Canvas(root, height = 600, width = 600)
+    cv.pack()
+    r = Rhombus(100,200,50,60)
+    cv.create_polygon(r.points(), fill='green')
+    r = Rhombus(300,100,80,30)
+    cv.create_polygon(r.points(), fill='red')
+    root.mainloop()
