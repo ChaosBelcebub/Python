@@ -191,14 +191,15 @@ def test_cargo_weight():
     CargoShip1.add_cargo(Cargo3)
     CargoShip2.add_cargo(Cargo1)
     CargoShip2.add_cargo(Cargo2)
-    CargoShip2.add_cargo(Cargo3)
     SailingShip1.add_cargo(Cargo1)
     SailingShip1.add_cargo(Cargo2)
     SailingShip1.add_cargo(Cargo3)
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
-    SailingShip2.add_cargo(Cargo3)
-
+    assert CargoShip1.cargo_weight() == 17
+    assert CargoShip2.cargo_weight() == 15
+    assert SailingShip1.cargo_weight() == 17
+    assert SailingShip2.cargo_weight() == 15
     
 
 def test_add_cargo():
