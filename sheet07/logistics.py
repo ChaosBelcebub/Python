@@ -81,7 +81,7 @@ class MeansOfTransport:
         for cargo in self.cargo:
             if cargo.idnumber == cargo_id:
                 self.cargo.remove(cargo)
-                return True
+                return cargo
         return None
 
 
@@ -249,9 +249,9 @@ def test_unload_cargo():
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
     SailingShip2.add_cargo(Cargo3)
-    assert CargoShip1.unload_cargo(1) == True
-    assert CargoShip2.unload_cargo(2) == True
-    assert SailingShip1.unload_cargo(3) == True
+    assert CargoShip1.unload_cargo(1) == Cargo1
+    assert CargoShip2.unload_cargo(2) == Cargo2
+    assert SailingShip1.unload_cargo(3) == Cargo3
     assert SailingShip2.unload_cargo(42) == None
 
 
