@@ -187,17 +187,15 @@ def test_cargo_weight():
     Cargo2 = Cargo(2, "Schokolade", 5, "Hamburg")
     Cargo3 = Cargo(3, "Eier", 2, "Hamburg")
     CargoShip1.add_cargo(Cargo1)
-    CargoShip1.add_cargo(Cargo2)
     CargoShip1.add_cargo(Cargo3)
-    CargoShip2.add_cargo(Cargo1)
     CargoShip2.add_cargo(Cargo2)
     SailingShip1.add_cargo(Cargo1)
     SailingShip1.add_cargo(Cargo2)
     SailingShip1.add_cargo(Cargo3)
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
-    assert CargoShip1.cargo_weight() == 17
-    assert CargoShip2.cargo_weight() == 15
+    assert CargoShip1.cargo_weight() == 12
+    assert CargoShip2.cargo_weight() == 5
     assert SailingShip1.cargo_weight() == 17
     assert SailingShip2.cargo_weight() == 15
     
@@ -222,6 +220,13 @@ def test_add_cargo():
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
     SailingShip2.add_cargo(Cargo3)
+
+    Cargo4 = Cargo(4, "Kuchen", 5, "Berlin")
+    Cargo5 = Cargo(5, "Wein", 20, "Hamburg")
+    assert CargoShip1.add_cargo(Cargo1) == False
+    assert CargoShip2.add_cargo(Cargo4) == False
+    assert SailingShip1.add_cargo(Cargo5) == False
+    assert SailingShip2.add_cargo(Cargo5) == True
 
 
 def test_remove_cargo():
