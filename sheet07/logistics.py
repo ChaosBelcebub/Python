@@ -249,7 +249,10 @@ def test_unload_cargo():
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
     SailingShip2.add_cargo(Cargo3)
-    
+    assert CargoShip1.unload_cargo(1) == True
+    assert CargoShip2.unload_cargo(2) == True
+    assert SailingShip1.unload_cargo(3) == True
+    assert SailingShip2.unload_cargo(42) == None
 
 
 def test_move():
