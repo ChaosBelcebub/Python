@@ -5,6 +5,7 @@
 
 """
 
+
 class Cargo:
     """Class for cargo
 
@@ -33,6 +34,7 @@ class Cargo:
         return "Cargo(idnumber=%s, description=%s, weight=%s, location=%s)"\
                % (self.idnumber, self.description, self.weight, self.location)
 
+
 class MeansOfTransport:
     """Class for transportation
 
@@ -53,19 +55,16 @@ class MeansOfTransport:
         self.cargocapacaty = cargocapacaty
         self.cargo = []
 
-
     def move(self, destination):
         location = self.location
         self.location = destination
         return "Moves from %s to %s" % (location, self.location)
-
 
     def cargo_weight(self):
         result = 0
         for cargo in self.cargo:
             result += cargo.weight
         return result
-
 
     def add_cargo(self, new_cargo):
         weight = self.cargo_weight()
@@ -76,14 +75,12 @@ class MeansOfTransport:
                     return True
         return False
 
-
     def unload_cargo(self, cargo_id):
         for cargo in self.cargo:
             if cargo.idnumber == cargo_id:
                 self.cargo.remove(cargo)
                 return cargo
         return None
-
 
     def list_cargo(self):
         out = ""
@@ -113,11 +110,11 @@ class Ship(MeansOfTransport):
         self.name = name
         super().__init__(location, cargocapacaty)
 
-
     def __str__(self):
-        return "Name: %s\nLocation: %s\nCargocapacaty: %s" % (self.name,\
-                                                            self.location,\
-                                                            self.cargocapacaty)
+        return "Name: %s\nLocation: %s\nCargocapacaty: %s" % (self.name,
+                                                              self.location,
+                                                              self.
+                                                              cargocapacaty)
 
 
 class CargoShip(Ship):
@@ -142,10 +139,9 @@ class CargoShip(Ship):
         self.fuel_amount = fuel_amount
         super().__init__(name, location, cargocapacaty)
 
-
     def __str__(self):
         return "Name: %s\nLocation: %s\nCargocapacaty: %s\nFuelAmount: %s"\
-               % (self.name, self.location, self.cargocapacaty,\
+               % (self.name, self.location, self.cargocapacaty,
                   self.fuel_amount)
 
 
@@ -171,10 +167,9 @@ class SailingShip(Ship):
         self.mast_count = mast_count
         super().__init__(name, location, cargocapacaty)
 
-
     def __str__(self):
         return "Name: %s\nLocation: %s\nCargocapacaty: %s\nMastCount: %s"\
-               % (self.name, self.location, self.cargocapacaty,\
+               % (self.name, self.location, self.cargocapacaty,
                   self.mast_count)
 
 
@@ -198,7 +193,7 @@ def test_cargo_weight():
     assert CargoShip2.cargo_weight() == 5
     assert SailingShip1.cargo_weight() == 17
     assert SailingShip2.cargo_weight() == 15
-    
+
 
 def test_add_cargo():
     CargoShip1 = CargoShip("Destiny", "Hamburg", 50, 50)
@@ -223,10 +218,10 @@ def test_add_cargo():
 
     Cargo4 = Cargo(4, "Kuchen", 5, "Berlin")
     Cargo5 = Cargo(5, "Wein", 20, "Hamburg")
-    assert CargoShip1.add_cargo(Cargo1) == False
-    assert CargoShip2.add_cargo(Cargo4) == False
-    assert SailingShip1.add_cargo(Cargo5) == False
-    assert SailingShip2.add_cargo(Cargo5) == True
+    assert CargoShip1.add_cargo(Cargo1) is False
+    assert CargoShip2.add_cargo(Cargo4) is False
+    assert SailingShip1.add_cargo(Cargo5) is False
+    assert SailingShip2.add_cargo(Cargo5) is True
 
 
 def test_unload_cargo():
@@ -252,7 +247,7 @@ def test_unload_cargo():
     assert CargoShip1.unload_cargo(1) == Cargo1
     assert CargoShip2.unload_cargo(2) == Cargo2
     assert SailingShip1.unload_cargo(3) == Cargo3
-    assert SailingShip2.unload_cargo(42) == None
+    assert SailingShip2.unload_cargo(42) is None
 
 
 def test_move():
