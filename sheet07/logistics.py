@@ -275,6 +275,10 @@ def test_move():
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
     SailingShip2.add_cargo(Cargo3)
+    assert CargoShip1.move("Port Royal") == "Moves from Hamburg to Port Royal"
+    assert CargoShip2.move("New York") == "Moves from Hamburg to New York"
+    assert SailingShip1.move("Kapstadt") == "Moves from Hamburg to Kapstadt"
+    assert SailingShip2.move("Rotterdam") == "Moves from Hamburg to Rotterdam"
 
 
 if __name__ == "__main__":
