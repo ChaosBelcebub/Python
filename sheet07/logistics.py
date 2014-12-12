@@ -40,19 +40,19 @@ class MeansOfTransport:
 
     Args:
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
 
     Attributes:
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
       cargo (list): cargo objects
 
     .. versionadded:: 2014-12-09
     """
 
-    def __init__(self, location, cargocapacaty):
+    def __init__(self, location, cargocapacity):
         self.location = location
-        self.cargocapacaty = cargocapacaty
+        self.cargocapacity = cargocapacity
         self.cargo = []
 
     def move(self, destination):
@@ -68,7 +68,7 @@ class MeansOfTransport:
 
     def add_cargo(self, new_cargo):
         weight = self.cargo_weight()
-        if weight + new_cargo.weight <= self.cargocapacaty:
+        if weight + new_cargo.weight <= self.cargocapacity:
             if self.location == new_cargo.location:
                 if new_cargo not in self.cargo:
                     self.cargo.append(new_cargo)
@@ -96,25 +96,25 @@ class Ship(MeansOfTransport):
     Args:
       name (string): name of ship
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
 
     Attributes:
       name (string): name of ships
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
 
     .. versionadded:: 2014-12-09
     """
 
-    def __init__(self, name, location, cargocapacaty):
+    def __init__(self, name, location, cargocapacity):
         self.name = name
-        super().__init__(location, cargocapacaty)
+        super().__init__(location, cargocapacity)
 
     def __str__(self):
-        return "Name: %s\nLocation: %s\nCargocapacaty: %s" % (self.name,
+        return "Name: %s\nLocation: %s\nCargocapacity: %s" % (self.name,
                                                               self.location,
                                                               self.
-                                                              cargocapacaty)
+                                                              cargocapacity)
 
 
 class CargoShip(Ship):
@@ -123,25 +123,25 @@ class CargoShip(Ship):
     Args:
       name (string): name of ship
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
       fuel_amount (int): fuel_amount
 
     Attributes:
       name (string): name of ships
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
       fuel_amount (int): fuel_amount
 
     .. versionadded:: 2014-12-09
     """
 
-    def __init__(self, name, location, cargocapacaty, fuel_amount):
+    def __init__(self, name, location, cargocapacity, fuel_amount):
         self.fuel_amount = fuel_amount
-        super().__init__(name, location, cargocapacaty)
+        super().__init__(name, location, cargocapacity)
 
     def __str__(self):
-        return "Name: %s\nLocation: %s\nCargocapacaty: %s\nFuelAmount: %s"\
-               % (self.name, self.location, self.cargocapacaty,
+        return "Name: %s\nLocation: %s\nCargocapacity: %s\nFuelAmount: %s"\
+               % (self.name, self.location, self.cargocapacity,
                   self.fuel_amount)
 
 
@@ -151,25 +151,25 @@ class SailingShip(Ship):
     Args:
       name (string): name of ship
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
       mast_count (int): count of masts
 
     Attributes:
       name (string): name of ships
       location (string): location
-      cargocapacaty (int): max cargo capacaty
+      cargocapacity (int): max cargo capacity
       mast_count (int): count of masts
 
     .. versionadded:: 2014-12-09
     """
 
-    def __init__(self, name, location, cargocapacaty, mast_count):
+    def __init__(self, name, location, cargocapacity, mast_count):
         self.mast_count = mast_count
-        super().__init__(name, location, cargocapacaty)
+        super().__init__(name, location, cargocapacity)
 
     def __str__(self):
-        return "Name: %s\nLocation: %s\nCargocapacaty: %s\nMastCount: %s"\
-               % (self.name, self.location, self.cargocapacaty,
+        return "Name: %s\nLocation: %s\nCargocapacity: %s\nMastCount: %s"\
+               % (self.name, self.location, self.cargocapacity,
                   self.mast_count)
 
 
