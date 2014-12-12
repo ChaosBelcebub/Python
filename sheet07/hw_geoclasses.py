@@ -15,7 +15,6 @@ References:
 
 from math import pi
 import tkinter as tk
-import sys
 
 
 class TwoDObject:
@@ -280,8 +279,9 @@ class Rhombus(Rectangle):
                 (self.x, self.y, self.height, self.width))
 
     def points(self):
-        return [self.width/2+self.x, self.y, self.x, self.height/2+self.y,\
-                -(self.width/2)+self.x, self.y, self.x, -(self.height/2)+self.y]
+        return [self.width / 2 + self.x, self.y, self.x,
+                self.height / 2 + self.y, -(self.width / 2) + self.x,
+                self.y, self.x, -(self.height / 2) + self.y]
 
 
 def _test():
@@ -293,10 +293,10 @@ if __name__ == "__main__":
     _test()
 
     root = tk.Tk()
-    cv = tk.Canvas(root, height = 600, width = 600)
+    cv = tk.Canvas(root, height=600, width=600)
     cv.pack()
-    r = Rhombus(100,200,50,60)
+    r = Rhombus(100, 200, 50, 60)
     cv.create_polygon(r.points(), fill='green')
-    r = Rhombus(300,100,80,30)
+    r = Rhombus(300, 100, 80, 30)
     cv.create_polygon(r.points(), fill='red')
     root.mainloop()
