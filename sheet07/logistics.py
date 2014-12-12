@@ -89,7 +89,7 @@ class MeansOfTransport:
         out = ""
         for cargo in self.cargo:
             out += "Description: " + cargo.description + "\n"
-            out += "Weight: " + cargo.weight + "\n\n"
+            out += "Weight: " + str(cargo.weight) + "\n\n"
         return out
 
 
