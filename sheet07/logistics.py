@@ -81,7 +81,7 @@ class MeansOfTransport:
         for cargo in self.cargo:
             if cargo.idnumber == cargo_id:
                 self.cargo.remove(cargo)
-                return
+                return True
         return None
 
 
@@ -229,7 +229,7 @@ def test_add_cargo():
     assert SailingShip2.add_cargo(Cargo5) == True
 
 
-def test_remove_cargo():
+def test_unload_cargo():
     CargoShip1 = CargoShip("Destiny", "Hamburg", 50, 50)
     CargoShip2 = CargoShip("Victoria", "Hamburg", 30, 60)
     SailingShip1 = SailingShip("Emanuela", "Hamburg", 25, 3)
@@ -249,6 +249,7 @@ def test_remove_cargo():
     SailingShip2.add_cargo(Cargo1)
     SailingShip2.add_cargo(Cargo2)
     SailingShip2.add_cargo(Cargo3)
+    
 
 
 def test_move():
@@ -276,5 +277,5 @@ def test_move():
 if __name__ == "__main__":
     test_cargo_weight()
     test_add_cargo()
-    test_remove_cargo()
+    test_unload_cargo()
     test_move()
