@@ -49,7 +49,6 @@ class Cargo:
         self._history += self._location + " to " + location + "\n"
         self._location = location
 
-
     def get_idnumber(self):
         return self._idnumber
 
@@ -62,16 +61,15 @@ class Cargo:
     def get_history(self):
         return self._history
 
-    
     idnumber = property(get_idnumber)
     weight = property(get_weight)
     location = property(get_location, update_location)
     history = property(get_history)
 
-
     def __repr__(self):
         return ("Cargo(idnumber=%s, description=%r, weight=%s, location=%r)" %
-                (self._idnumber, self.description, self._weight, self._location))
+                (self._idnumber, self.description,
+                 self._weight, self._location))
 
 
 class MeansOfTransport:
@@ -217,7 +215,7 @@ def test_history():
     assert c3.history == "Freiburg to Berlin\n"
     assert c4.history == "Freiburg to Berlin\nBerlin to Stockholm\n"
     assert c5.history == "Freiburg to Berlin\nBerlin to Stockholm\n" + \
-           "Stockholm to Winterwunderland\n"
+                         "Stockholm to Winterwunderland\n"
 
 if __name__ == "__main__":
     test_update_location()
