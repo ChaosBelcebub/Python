@@ -213,6 +213,11 @@ def test_history():
     t2.move("Winterwunderland")
     t2.unload_cargo(5)
     assert c1.history == "Freiburg to Basel\n"
+    assert c2.history == "Freiburg to Basel\nBasel to New York\n"
+    assert c3.history == "Freiburg to Berlin\n"
+    assert c4.history == "Freiburg to Berlin\nBerlin to Stockholm\n"
+    assert c5.history == "Freiburg to Berlin\nBerlin to Stockholm\n" + \
+           "Stockholm to Winterwunderland\n"
 
 if __name__ == "__main__":
     test_update_location()
