@@ -158,6 +158,7 @@ class MeansOfTransport:
         for c in self.cargo:
             print("{:<20}: {:>8}kg".format(c.description, c.weight))
 
+
 def test_update_location():
     t1 = MeansOfTransport("Freiburg", 20)
     t2 = MeansOfTransport("Freiburg", 30)
@@ -182,9 +183,36 @@ def test_update_location():
     t2.move("Winterwunderland")
     t2.unload_cargo(5)
     assert c1.location == "Basel"
+    assert c2.location == "New York"
+    assert c3.location == "Berlin"
+    assert c4.location == "Stockholm"
+    assert c5.location == "Winterwunderland"
+
 
 def test_history():
-    pass
+    t1 = MeansOfTransport("Freiburg", 20)
+    t2 = MeansOfTransport("Freiburg", 30)
+    c1 = Cargo(1, "Bananas", 5, "Freiburg")
+    c2 = Cargo(2, "Ananas", 5, "Freiburg")
+    c3 = Cargo(3, "Wasser", 5, "Freiburg")
+    c4 = Cargo(4, "Elfenbein", 5, "Freiburg")
+    c5 = Cargo(5, "BigMacs", 5, "Freiburg")
+    t1.add_cargo(c1)
+    t1.add_cargo(c2)
+    t2.add_cargo(c3)
+    t2.add_cargo(c4)
+    t2.add_cargo(c5)
+    t1.move("Basel")
+    t1.unload_cargo(1)
+    t1.move("New York")
+    t1.unload_cargo(2)
+    t2.move("Berlin")
+    t2.unload_cargo(3)
+    t2.move("Stockholm")
+    t2.unload_cargo(4)
+    t2.move("Winterwunderland")
+    t2.unload_cargo(5)
+    assert c1.history == "Freiburg to Basel\n"
 
 if __name__ == "__main__":
     test_update_location()
