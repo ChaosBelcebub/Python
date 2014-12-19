@@ -12,6 +12,8 @@ References:
 
 """
 
+import pytest
+
 
 class Cargo:
 
@@ -46,83 +48,19 @@ class Cargo:
         self._history = ""
 
     def update_location(self, location):
-        """ Method for updating the private location
-
-        Args:
-          location (string): the destination
-
-        Examples:
-
-          >>> c = Cargo(1, "chicken", 500, "Freiburg")
-          >>> c.update_location("Ber")
-          >>> c
-          Cargo(idnumber=1, description='chicken', weight=500, location='Ber')
-
-        """
         self._history += self._location + " to " + location + "\n"
         self._location = location
 
     def get_idnumber(self):
-        """ Getter for private idnumber
-
-        Examples:
-
-          >>> c = Cargo(1, "chicken", 500, "Freiburg")
-          >>> c.idnumber
-          1
-          >>> c.idnumber = 1
-          Traceback (most recent call last):
-              ...
-          AttributeError: can't set attribute
-
-        """
         return self._idnumber
 
     def get_weight(self):
-        """ Getter for private weight
-
-        Examples:
-
-          >>> c = Cargo(1, "chicken", 500, "Freiburg")
-          >>> c.weight
-          500
-          >>> c.weight = 1
-          Traceback (most recent call last):
-              ...
-          AttributeError: can't set attribute
-
-        """
         return self._weight
 
     def get_location(self):
-        """ Getter for private location
-
-        Examples:
-
-          >>> c = Cargo(1, "chicken", 500, "Freiburg")
-          >>> c.location
-          'Freiburg'
-          >>> c.location = 'Berlin'
-          >>> c.location
-          'Berlin'
-
-        """
         return self._location
 
     def get_history(self):
-        r"""Getter for private history
-
-        Examples:
-
-          >>> c = Cargo(1, "chicken", 500, "Freiburg")
-          >>> c.location = "Berlin"
-          >>> c.history
-          'Freiburg to Berlin\n'
-          >>> c.history = "Berlin to Freiburg\n"
-          Traceback (most recent call last):
-              ...
-          AttributeError: can't set attribute
-        """
         return self._history
 
     idnumber = property(get_idnumber)
@@ -283,8 +221,18 @@ def test_history():
 
 
 def test():
-    import doctest
-    doctest.testmod(verbose=True)
+    t1 = MeansOfTransport("Freiburg", 20)
+    c1 = Cargo(1, "Bananas", 5, "Freiburg")
+    t1.add_cargo(c1)
+    with pytest.raises(AttributeError):
+        c1.idnumber = 2
+
+    with pytest.raises(AttributeError):
+        c1.weight = 5
+
+    with pytest.raises(AttributeError):
+        c1.history = "Test"
+
 
 if __name__ == "__main__":
     test_update_location()
