@@ -62,7 +62,7 @@ def vigenere(text, secret, charset=ascii_letters):
 
 def test_vigenere():
     assert vigenere("1. Advent", "Kerze") == "1. ZhfiES"
-    assert vigenere("1. Advent", "Ker ze") is None
+    assert vigenere("1. Advent", "Ker ze") == None
     assert vigenere("geheimnis", "akey") == "golCiwrGs"
     assert vigenere("Dies ist ein Test!", "Schokolade") == "vklG wDt iap hoGE!"
 
