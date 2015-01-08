@@ -1,0 +1,10 @@
+L(A) = [A]
+L(B) = [B]
+L(C) = [C] + merge(L(A), [A]) = [C, A]
+L(D) = [D] + merge(L(A), L(B), [A, B])
+     = [D] + merge([A], [B], [A, B])
+     = [D, A, B]
+L[F] = [F] + merge(L(B), [B]) = [F, B]
+L[E] = [A] + merge(L(C), L(D), [C, D])
+     = [A] + merge([C, A], [D, A, B], [C, D])
+     = [C, D, A, B]

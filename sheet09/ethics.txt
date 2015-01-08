@@ -1,0 +1,14 @@
+Tims Entscheidung ist ethisch nicht vertretbar.
+Er arbeitet an sicherheitsrelevanten Modulen, somit ist das Verhalten nach den
+Richtlinien der ACM nicht vertretbar.
+
+Er gibt Code frei, im vollen Wissen das dieser nicht den Anforderungen
+entspricht und täuscht somit auch den Kunden, der davon nichts weiß weil diese
+Fehler nirgends dokumentiert werden.
+Auch sein Chef macht hier fehler, da er ebenfals davon weiß und Tim sogar zwingt
+sich gegen die Richtlinien zu stellen.
+EBenfals stellt sich die frage ob dieser möglichwerweise falsch Kalkuliert, da
+es in der Vergangenheit schoneinmal zu verzögerungen gekommen ist.
+
+Tim sollte den Auftraggeber kontaktieren und um einen Aufschub des Releases zu
+bitten um sich auf diese Fehler konzentrieren zu können.
