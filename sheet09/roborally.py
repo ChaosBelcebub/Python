@@ -538,7 +538,7 @@ class OneWayPortal(FactoryElement):
         logging.info("ONEWAYPORTAL: %s was teleported from %s to %s" % (agent, agent.pos,
                                                     self.target))
         agent.pos = self.target
-        super().acton(agent, factory)
+        #agent.resolve(factory)
 
 
 if __name__ == "__main__":
