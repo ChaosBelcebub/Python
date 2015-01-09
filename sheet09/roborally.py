@@ -219,6 +219,12 @@ class MoveableThing(TurnableThing):
         logging.info("transport: %s to %s" % (self, self.pos))
         factory.apply('after')  # check for walls!
 
+    def teleport(self, target, factory):
+        """Teleport to target"""
+        self.lastconf = (self.pos, self.dir)
+        self.pos = target
+        factory.apply('after')
+
     def resolve(self, factory):
         """Is called after every robot has been transported or moved"""
         collider = factory.collision(self)
@@ -251,6 +257,8 @@ class Robot(MoveableThing):
     ((1, 2), 0)
 
     """
+
+    isTeleport = False
 
     def __init__(self, x, y, dir="N", name="", **kw):
         super().__init__(x, y, dir, **kw)
@@ -357,12 +365,13 @@ class Wall(OrientedFactoryElement):
     active_elem_moves = {0, 1, 2, 3, 4, 5, 6, 7}
 
     def acton(self, agent, factory):
-        if agent.lastconf:
-            if agent.lastconf[0] == Space.neighbour(self.pos, self.dir):
-                agent.pos = agent.lastconf[0]
-                agent.dir = agent.lastconf[1]
-                agent.lastconf = None
-                logging.info("%s bumped into a wall and is back at %s" %
+        if not agent.teleport:
+            if agent.lastconf:
+                if agent.lastconf[0] == Space.neighbour(self.pos, self.dir):
+                    agent.pos = agent.lastconf[0]
+                    agent.dir = agent.lastconf[1]
+                    agent.lastconf = None
+                    logging.info("%s bumped into a wall and is back at %s" %
                              (agent, agent.pos))
 
 
@@ -537,8 +546,10 @@ class OneWayPortal(FactoryElement):
     def acton(self, agent, factory):
         logging.info("ONEWAYPORTAL: %s was teleported from %s to %s" % (agent, agent.pos,
                                                     self.target))
-        agent.pos = self.target
-        #agent.resolve(factory)
+        agent.isTeleport = True
+        agent.teleport(self.target, factory)
+        agent.isTeleport = False
+        
 
 
 if __name__ == "__main__":
