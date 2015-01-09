@@ -275,6 +275,8 @@ class Robot(MoveableThing):
 
     def onestep(self, forward, factory):
         """active execution of one step (forward or backward)"""
+        # Set isTeleport back to False before a normal move
+        self.isTeleport = False
         forb = "forward"
         if not forward:
             forb = "backward"
@@ -365,14 +367,14 @@ class Wall(OrientedFactoryElement):
     active_elem_moves = {0, 1, 2, 3, 4, 5, 6, 7}
 
     def acton(self, agent, factory):
-        if not agent.teleport:
+        if not agent.isTeleport:
             if agent.lastconf:
                 if agent.lastconf[0] == Space.neighbour(self.pos, self.dir):
                     agent.pos = agent.lastconf[0]
                     agent.dir = agent.lastconf[1]
                     agent.lastconf = None
                     logging.info("%s bumped into a wall and is back at %s" %
-                             (agent, agent.pos))
+                                 (agent, agent.pos))
 
 
 class Pusher(OrientedFactoryElement):
@@ -486,6 +488,7 @@ class TurningConveyor(Conveyor):
         super().acton(agent, factory)
 
 
+# Crusher and OneWayPortal are FactoryElements
 class Crusher(FactoryElement):
 
     """Crushers destroy robots, when the crushers are active.
@@ -515,7 +518,8 @@ class Crusher(FactoryElement):
         agent.alive = False
         agent.lives -= 1
         agent.virtual = True
-        logging.info("CRUSHER: %s gets into a crusher at %s" % (agent, agent.pos))
+        logging.info("CRUSHER: %s gets into a crusher at\
+                     %s" % (agent, agent.pos))
         agent.pos = None
 
 
@@ -544,12 +548,11 @@ class OneWayPortal(FactoryElement):
         self.target = target
 
     def acton(self, agent, factory):
-        logging.info("ONEWAYPORTAL: %s was teleported from %s to %s" % (agent, agent.pos,
-                                                    self.target))
+        logging.info("ONEWAYPORTAL: %s was teleported from %s to %s" %
+                     (agent, agent.pos, self.target))
         agent.isTeleport = True
         agent.teleport(self.target, factory)
-        agent.isTeleport = False
-        
+        # isTeleport is set back to false before a normal move
 
 
 if __name__ == "__main__":
