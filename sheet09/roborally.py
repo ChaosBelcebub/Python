@@ -477,7 +477,7 @@ class TurningConveyor(Conveyor):
         super().acton(agent, factory)
 
 
-class Crusher():
+class Crusher(FactoryElement):
 
     """Crushers destroy robots, when the crushers are active.
 
@@ -496,18 +496,27 @@ class Crusher():
 
 
     """
+    active_elem_moves = {5}
 
     def __init__(self, x, y, reg_phases={}, **kw):
-        pass
+        super().__init__(x, y, **kw)
+        self.active_reg_phases = reg_phases
+
+    def acton(self, agent, factory):
+        agent.alive = False
+        agent.lives -= 1
+        agent.virtual = True
+        logging.info("CRUSHER: %s gets into a crusher at %s" % (agent, agent.pos))
+        agent.pos = None
 
 
-class OneWayPortal():
+class OneWayPortal(FactoryElement):
 
     """OneWayPortal are elements that teleport robots to a target place
        become active in the element move phase 6
 
     >>> r = Robot(1, 1, "E", "Rob")
-    >>> t = Robot(3, 3, "S", "Tom")\
+    >>> t = Robot(3, 3, "S", "Tom")
     >>> f = Factory(3, 3, installs=(r, t))
     >>> f.install(OneWayPortal(1, 1, target=(3, 3)))
     >>> f.install(Wall(3, 2, dir='N'))
@@ -519,9 +528,17 @@ class OneWayPortal():
     >>> r.pos, t.pos
     ((3, 3), (3, 2))
     """
+    active_elem_moves = {6}
 
     def __init__(self, x, y, target=(0, 0), **kw):
-        pass
+        super().__init__(x, y, **kw)
+        self.target = target
+
+    def acton(self, agent, factory):
+        logging.info("ONEWAYPORTAL: %s was teleported from %s to %s" % (agent, agent.pos,
+                                                    self.target))
+        agent.pos = self.target
+        super().acton(agent, factory)
 
 
 if __name__ == "__main__":
