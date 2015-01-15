@@ -1,5 +1,6 @@
 import re
 
+
 # RegEx sind Sinnvoll da der Code so um einiges kürzer ist
 def check_for_startcodon(AUGCstring):
     """Checks for startcodon
@@ -12,8 +13,8 @@ def check_for_startcodon(AUGCstring):
     else:
         return False
 
-#b) r"AUG(?:[AUGC]{3})+UAG"
+# b) r"AUG(?:[AUGC]{3})+UAG"
+
 
 def extract_codon_string(AUGCstring):
     return re.findall(r"(?<=AUG)(?:[AUGC]{3})+?(?=UAG)", AUGCstring)
-    
