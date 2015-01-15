@@ -1,0 +1,15 @@
+a) r'[^\']+\d[a-d|*]'
+  Zuerst werden mindestens ein Zeichen außer dem ' gematcht, gefolgt von einer
+  Ziffer, gefolgt von einem Zeichen a-d oder *.
+
+Test123Zc
+'''''''''
+
+b) r'(([A-Za-z]+?)(\d)\2-\3)'
+  Zuerst müssen Groß und kleinbuchstaben kommen, mindestens ein zeichen, das
+  ist aber Optional. Danach kommt eine Ziffer. Dann wird die zweite Gruppe
+  wiederholt (Optional mindestens ein mal Groß und kleinbuchstaben) und dann
+  die dritte (Eine Ziffer).
+
+Test9Test9
+Test9 Test9
