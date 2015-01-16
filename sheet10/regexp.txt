@@ -6,10 +6,10 @@ Test123Zc
 '''''''''
 
 b) r'(([A-Za-z]+?)(\d)\2-\3)'
-  Zuerst müssen Groß und kleinbuchstaben kommen, mindestens ein zeichen, das
-  ist aber Optional. Danach kommt eine Ziffer. Dann wird die zweite Gruppe
-  wiederholt (Optional mindestens ein mal Groß und kleinbuchstaben) und dann
-  die dritte (Eine Ziffer).
+  Zuerst müssen Groß und kleinbuchstaben kommen, mindestens ein zeichen,
+  das ist aber Optional. Danach kommt eine Ziffer. Dann wird die zweite
+  Gruppe wiederholt (Optional mindestens ein mal Groß und kleinbuchstaben)
+  gefolgt von einem Bindestrich und dann die dritte Gruppe (Eine Ziffer).
 
+Test9Test-9
 Test9Test9
-Test9 Test9
