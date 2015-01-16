@@ -7,6 +7,9 @@ def check_for_startcodon(AUGCstring):
 
     Args:
       AUGCstring (string): the AUGC string
+
+    Returns:
+      Bool: True or False
     """
     if re.findall(r"AUG", AUGCstring):
         return True
@@ -17,4 +20,26 @@ def check_for_startcodon(AUGCstring):
 
 
 def extract_codon_string(AUGCstring):
+    """Extract codon
+
+    Args:
+      AUGCstring (string): the AUGC string
+
+    Returns:
+      String: The extracted codon
+    """
     return re.findall(r"(?<=AUG)(?:[AUGC]{3})+?(?=UAG)", AUGCstring)
+
+
+def test_check_for_startcodon():
+    assert check_for_startcodon("AUG") is True
+    assert check_for_startcodon("UAGAGUGAUGUGA") is True
+    assert check_for_startcodon("UAGUAG") is False
+    assert check_for_startcodon("") is False
+
+
+def test_extract_codon_string():
+    assert extract_codon_string("AUGCCCUAGAUGCCCUAG") == ['CCC', 'CCC']
+    assert extract_codon_string("AUGAUGCCCUAG") == ['AUGCCC']
+    assert extract_codon_string("AUGUAG") == []
+    assert extract_codon_string("UGAAAUGCCCCCCUAG") == ['CCCCCC']
