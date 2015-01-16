@@ -43,3 +43,8 @@ def test_extract_codon_string():
     assert extract_codon_string("AUGAUGCCCUAG") == ['AUGCCC']
     assert extract_codon_string("AUGUAG") == []
     assert extract_codon_string("UGAAAUGCCCCCCUAG") == ['CCCCCC']
+
+
+if __name__ == "__main__":
+    test_check_for_startcodon()
+    test_extract_codon_string()

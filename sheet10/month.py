@@ -40,3 +40,7 @@ def test_find_dates():
     assert find_dates("Hier befinden sich keine Daten!") == []
     assert find_dates("Um 8:32 Uhr am 12. Juni stehen hier immer noch" +
                       "keine!") == []
+
+
+if __name__ == "__main__":
+    test_find_dates()
