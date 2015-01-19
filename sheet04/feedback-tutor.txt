@@ -1,0 +1,75 @@
+Gesamt: 18.5 / 20
+
+
+Aufgabe 4.1
+===========
+
+Punkte: 5.5 / 6
+
+Die Funktionen sollten aber noch dokumentiert werden.
+
+
+Aufgabe 4.1(a)
+--------------
+
+Check
+
+
+Aufgabe 4.1(b)
+--------------
+
+Check
+
+
+Aufgabe 4.2
+===========
+
+Punkte: 5 / 6
+
+
+Aufgabe 4.2(a)
+--------------
+
+Check
+
+
+Aufgabe 4.2(b)
+--------------
+
+Du machst hier zwei mal denselben Test.
+
+
+Aufgabe 4.2(c)
+--------------
+
+Zwei Funktionen sollten immer durch zwei Leerzeilen getrennt werden und die
+Länge der Zeilen < 80 Zeichen sein.
+
+
+Aufgabe 4.3
+===========
+
+Punkte: 6 / 6
+
+
+Aufgabe 4.3(a)
+--------------
+
+Check
+
+
+Aufgabe 4.3(b)
+--------------
+
+Check
+
+
+Aufgabe 4.4
+===========
+
+Punkte: 2 / 2
+
+Endlich sagt mal jemand, dass ihr schon genug über Bäume gemacht habt ;)
+
+
+Frank Schüssele <frank.schuessele@pluto.uni-freiburg.de>

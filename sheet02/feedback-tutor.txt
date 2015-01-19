@@ -1,0 +1,66 @@
+Aufgabe 2.1
+===========
+
+Punkte: 4 / 4
+
+Check
+
+
+Aufgabe 2.1(a)
+--------------
+
+
+Aufgabe 2.1(b)
+--------------
+
+
+Aufgabe 2.1(c)
+--------------
+
+
+Aufgabe 2.1(d)
+--------------
+
+
+Aufgabe 2.2
+===========
+
+Punkte: 5 / 5
+
+Check
+
+
+Aufgabe 2.3
+===========
+
+Punkte: 4 / 4
+
+Check
+
+
+Aufgabe 2.4
+===========
+
+Punkte: 4.5 / 5
+
+
+Aufgabe 2.4(a)
+--------------
+
+Check
+
+Aufgabe 2.4(b)
+--------------
+
+Schön, aber sollte auch in repayment.py!
+
+
+Aufgabe 2.5
+===========
+
+Punkte: 1 / 2
+
+Keine Zeitangaben!
+
+
+Frank Schüssele <frank.schuessele@pluto.uni-freiburg.de>

@@ -1,0 +1,68 @@
+Gesamt: 19 / 20
+
+
+Aufgabe 7.1
+===========
+
+Punkte: 9 / 9
+
+
+Aufgabe 7.1(a)
+--------------
+
+Eine Raute ist i.A. kein Rechteck, nur ein Parallelogram.
+
+
+Aufgabe 7.1(b)
+--------------
+
+Hier hättest du den meisten Code auch weglassen können, es wird sowieso vererbt.
+
+
+Aufgabe 7.1(c)
+--------------
+
+Schön!
+
+
+Aufgabe 7.2
+===========
+
+Punkte: 8 / 9
+
+Die Methoden sollten aber auch noch Docstrings haben.
+
+
+Aufgabe 7.2(a)
+--------------
+
+Check
+
+
+Aufgabe 7.2(b)
+--------------
+
+Gut, aber deine move-Methode bewegt die Fracht nicht mit.
+
+
+Aufgabe 7.2(c)
+--------------
+
+Bei der str-Methode hättest du auch Vererbung nutzen können.
+
+
+Aufgabe 7.2(d)
+--------------
+
+Check
+
+
+Aufgabe 7.3
+===========
+
+Punkte: 2 / 2
+
+Was, so lange? :D
+
+
+Frank Schüssele <frank.schuessele@pluto.uni-freiburg.de>

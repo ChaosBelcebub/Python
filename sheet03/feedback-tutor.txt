@@ -1,0 +1,81 @@
+Gesamt: 16 / 20
+
+
+Aufgabe 3.1
+===========
+
+Punkte: 7 / 8
+
+Funktionen sollten deriv und nicht derif heißen.
+
+
+Aufgabe 3.1(a)
+--------------
+
+Check
+
+
+Aufgabe 3.1(b)
+--------------
+
+Check
+
+
+Aufgabe 3.1(c)
+--------------
+
+Oben sollte noch der Autor und das Datum rein.
+
+
+Aufgabe 3.1(d)
+--------------
+
+Check
+
+
+Aufgabe 3.2
+===========
+
+Punkte: 5 / 5
+
+
+Aufgabe 3.2(a)
+--------------
+
+SEHR kompliziert, aber tut wohl das Richtige ;)
+
+
+Aufgabe 3.2(b)
+--------------
+
+Check
+
+
+Aufgabe 3.3
+===========
+
+Punkte: 4 / 5
+
+
+Aufgabe 3.3(a)
+--------------
+
+Check
+
+
+Aufgabe 3.3(b)
+--------------
+
+Dein Code sollte noch ausführbar bleiben (def am Anfang vergessen)
+Hier noch dazu schreiben, dass mit einer Scheibe weniger gearbeitet wird (n-1)
+
+
+Aufgabe 3.4
+===========
+
+Punkte: 0 / 2
+
+Fehlt
+
+
+Frank Schüssele <frank.schuessele@pluto.uni-freiburg.de>

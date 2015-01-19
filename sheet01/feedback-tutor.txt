@@ -1,0 +1,66 @@
+Aufgabe 1.1
+===========
+ok
+2/2
+
+
+Aufgabe 1.2
+===========
+ok
+5/5
+
+
+Aufgabe 1.3
+===========
+ok
+3/3
+
+
+Aufgabe 1.4
+===========
+ok
+3/3
+
+
+Aufgabe 1.5
+===========
+Aufgabe 1.5(a)
+--------------
+ok
+3/3
+
+Aufgabe 1.5(b)
+--------------
+ok
+3/3
+
+
+Aufgabe 1.6
+===========
+Aufgabe 1.6(a)
+--------------
+ok
+4/4
+
+Aufgabe 1.6(b)
+--------------
+-0.5P: Die Höhe war für die Pyramide gegeben, nicht für das Seitendreieck! Somit stimmt die Formel leider nicht ....
+sonst, OK!
+3.5/4
+
+
+Aufgabe 1.7
+===========
+Dss Problem sollte ich spätestens mit der einführung von Python Programmen erledigen :)
+3/3
+
+
+
+Gesamt
+======
+ = 29.5/30
+
+Wenn es Fragen zur Korrektur gibt (Punktabzüge usw.), dann schreibt eine Mail
+oder fragt mich persönlich in der Übungsgruppe.
+
+Daniel <info1.daniel@tutor.tf>

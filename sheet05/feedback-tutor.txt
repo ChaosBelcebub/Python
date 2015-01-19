@@ -1,0 +1,76 @@
+Gesamt: 14.5 / 20
+
+
+Aufgabe 5.1
+===========
+
+Punkte: 3 / 3
+
+Check
+
+
+Aufgabe 5.2
+===========
+
+Punkte: 2.5 / 5
+
+
+Aufgabe 5.2(a)
+--------------
+
+Du solltest hier aber die Untermengen mit k Elementen zurückgeben und nicht
+die Elemente von s mit Länge k. So funktioniert das z.B. mit Integer nicht und
+wirft einen Fehler, da diese keine Länge haben.
+
+
+Aufgabe 5.2(b)
+--------------
+
+Check
+
+
+Aufgabe 5.3
+===========
+
+Punkte: 4 / 4
+
+
+Aufgabe 5.3(a)
+--------------
+
+Check
+
+
+Aufgabe 5.3(b)
+--------------
+
+Check
+
+
+Aufgabe 5.4
+===========
+
+Punkte: 5 / 6
+
+
+Aufgabe 5.4(a)
+--------------
+
+Check
+
+
+Aufgabe 5.4(b)
+--------------
+
+Gut, allerdings sollten maximal upper Zeichen aus der Datei gelesen werden.
+
+
+Aufgabe 5.5
+===========
+
+Punkte: 0 / 2
+
+Mensch, 2 verschenkte Punkte ;)
+
+
+Frank Schüssele <frank.schuessele@pluto.uni-freiburg.de>

@@ -1,0 +1,55 @@
+Gesamt: 20 / 20
+
+
+Aufgabe 6.1
+===========
+
+Punkte: 8 / 8
+
+Schöner Code und für Brainfuck sogar relativ schnell!
+
+
+Aufgabe 6.1(a)
+--------------
+
+Check
+
+
+Aufgabe 6.1(b)
+--------------
+
+Check
+
+
+Aufgabe 6.1(c)
+--------------
+
+Check
+
+
+Aufgabe 6.2
+===========
+
+Punkte: 5 / 5
+
+Gut, allerdings ist mit der Assertion dein IndexError überflüssig.
+
+
+Aufgabe 6.3
+===========
+
+Punkte: 5 / 5
+
+Check
+
+
+Aufgabe 6.4
+===========
+
+Punkte: 2 / 2
+
+Daher der Name...
+Prof. Nebel meint immer, man sollte noch eine zweite Sprache beherrschen ;)
+
+
+Frank Schüssele <frank.schuessele@pluto.uni-freiburg.de>
