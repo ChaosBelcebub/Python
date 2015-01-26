@@ -38,13 +38,13 @@ if __name__ == '__main__':
                min(res) / number * unittosec[unit],
                unit))
 
-##    # Second (alternative) version:
-##    for fct in [func_a, func_b, func_c]:
-##        res = timeit.repeat(
-##            fct,
-##            repeat=repeat, number=number)
-##        print("%s: %d loops, best of %d: %.3g %s per loop" %
-##              (fct.__name__,
-##               number, repeat,
-##               min(res) / number * unittosec[unit],
-##               unit))
+#    # Second (alternative) version:
+#    for fct in [func_a, func_b, func_c]:
+#        res = timeit.repeat(
+#            fct,
+#            repeat=repeat, number=number)
+#        print("%s: %d loops, best of %d: %.3g %s per loop" %
+#              (fct.__name__,
+#               number, repeat,
+#               min(res) / number * unittosec[unit],
+#               unit))
