@@ -1,0 +1,17 @@
+a)
+  Die erste Suchfunktion nutzt zwei verschachtelte for-Schleifen um über die
+  Elemente der Liste zu Iterieren. Für jedes ELement der Liste wird jedes
+  Element der Liste genommen und diese beiden Elemente werden in die übergebene
+  Funktion eingegeben und verglichen.
+  Die zweite Suchfunktion nutzt ebenfals for-Schleifen, setzt diese aber anderst
+  ein. Anstatt direkt über die Elemente zu Iterieren wird mittels range()
+  gezählt und dann die Listen an genau den beiden STellen verglichen. Hier
+  entsteht aber auch der unterschied. In der inneren for-Schleife wird nicht von
+  0 gezählt, sondern von i. Dadurch entstehen andere ergebnisse.
+  Bsp.: Der Aufruf von search1("21", ["1", "2", "3", "4"], str) gibt True
+  zurück, search2 hingegen False bei den selben eingaben. Durch das zählen ab i
+  können, bei selbem eingabeshema, Strings wie "21", "73" und ähnliche, bei
+  denen die zweite Stelle kleiner ist als die erste, nicht erkannt werden.
+
+b)
+  
